@@ -1,0 +1,569 @@
+/* --- 1. DEFINE LOCAL FONTS --- */
+@font-face {
+    font-family: 'HouseofTerror';
+    src: url('fonts/HouseofTerror.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'DwarvenTodcraft';
+    src: url('fonts/DwarvenTodcraft.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'BrianneTod';
+    src: url('fonts/BrianneTod.ttf') format('truetype');
+}
+
+/* --- FEEDBACK FOOTER --- */
+#feedback {
+    background: #000;
+    color: #888;
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 4px solid var(--wood-dark);
+}
+
+.feedback-content p {
+    font-family: 'BrianneTod', sans-serif;
+    font-size: 1.5rem;
+    color: #e0e0e0;
+    margin: 0;
+}
+
+.dev-note {
+    font-family: 'DwarvenTodcraft', serif;
+    color: var(--accent);
+    margin-top: 5px;
+    display: block;
+}
+
+/* --- GLOBAL RESET --- */
+:root {
+    --bg-dark: #121212;
+    --bg-panel: #1e1e1e;
+    --accent: #4caf50;
+    --accent-blue: #2196f3; /* For History */
+    --wood-dark: #3e2723;
+    --parchment: #e2d6b5;
+    --text-brown: #3e2723;
+    --stat-red: #b71c1c;
+    --grid-bg: #9eb89e;
+}
+
+body {
+    /* BrianneTod is the default "Handwritten" look of the game */
+    font-family: 'BrianneTod', sans-serif;
+    font-size: 1.2rem; /* Increased base size because this font is naturally small */
+    background-color: var(--bg-dark);
+    color: #e0e0e0;
+    margin: 0;
+}
+
+/* --- NAVIGATION --- */
+nav {
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 2px solid var(--accent);
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    /* The Main Logo Style */
+    font-family: 'HouseofTerror', cursive;
+    font-size: 2.2rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.bayant {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--accent);
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.bayant:hover {
+    border-bottom-color: var(--accent);
+}
+
+.nav-links a {
+    font-family: 'DwarvenTodcraft', serif; /* UI Buttons style */
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    letter-spacing: 0.5px;
+}
+
+.discord-btn {
+    background: #5865F2;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/header.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-family: 'HouseofTerror', cursive;
+    font-size: 4.5rem; /* Massive Title */
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-shadow: 4px 4px 0px #000;
+}
+
+.hero p {
+    font-size: 1.4rem;
+}
+
+.cta-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-family: 'DwarvenTodcraft', serif;
+    font-size: 1.5rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #2e7d32;
+}
+
+.cta-btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* --- HISTORY SECTION --- */
+#history {
+    padding: 80px 20px;
+    background: var(--bg-panel);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-family: 'HouseofTerror', cursive;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background: var(--accent);
+    margin: 0 auto;
+}
+
+.timeline-block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.8s;
+}
+
+.timeline-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.timeline-img {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #333;
+}
+
+.timeline-img img {
+    width: 100%;
+    display: block;
+}
+
+.timeline-text {
+    flex: 1;
+}
+
+.timeline-text h3 {
+    font-family: 'DwarvenTodcraft', serif;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    color: var(--accent-blue);
+}
+
+/* Creator Profile Special Styling */
+.creator-profile {
+    position: relative;
+    border: 4px solid #fb7299; /* Bilibili Pink */
+    box-shadow: 0 0 20px rgba(251, 114, 153, 0.4);
+}
+
+.rank-badge {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fb7299;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    white-space: nowrap;
+}
+
+.ref-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #fb7299;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.ref-link:hover {
+    border-bottom-color: #fb7299;
+}
+
+/* --- ALMANAC SECTION --- */
+#almanac {
+    padding: 40px 20px;
+    background: #2a1a11;
+    display: flex;
+    justify-content: center;
+    min-height: 900px;
+}
+
+.almanac-container {
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Wooden Header Sign */
+.wood-sign {
+    background: #855e42;
+    border: 4px solid #3e2723;
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: -15px;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.wood-sign h2 {
+    margin: 0;
+    font-family: 'DwarvenTodcraft', serif; /* The exact font used on the wood in-game */
+    color: #ffb74d;
+    text-shadow: 2px 2px 0 #3e2723;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* Book Body */
+.book-wrapper {
+    width: 100%;
+    background-color: var(--parchment);
+    border-radius: 15px;
+    border: 8px solid #5d4037;
+    display: flex;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    position: relative;
+    padding: 10px;
+    min-height: 700px;
+}
+
+.page {
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* LEFT PAGE */
+.left-page {
+    width: 58%;
+    border-right: 2px solid #a1887f;
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-container {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.tab-btn {
+    background: #8d6e63;
+    color: white;
+    border: 2px solid #3e2723;
+    font-family: 'DwarvenTodcraft', serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
+
+.tab-btn.active {
+    background: var(--accent);
+}
+
+/* --- 8x6 GRID (48 ITEMS) --- */
+.seed-grid {
+    display: grid;
+    /* 8 columns exactly (Standard PvZ Layout) */
+    grid-template-columns: repeat(8, 1fr); 
+    grid-auto-rows: min-content;
+    gap: 3px;
+    background-color: #a4bfa4;
+    background-image: 
+        linear-gradient(#ccc 1px, transparent 1px),
+        linear-gradient(90deg, #ccc 1px, transparent 1px);
+    background-size: 100% 100%;
+    padding: 5px;
+    border: 2px solid #6d4c41;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+    
+    /* Adjusted Height for 6 Rows (620px for 8 rows) */
+    height: 480px; 
+    
+    overflow: hidden; 
+    align-content: start;
+}
+
+.seed-packet {
+    background: #fff;
+    border: 1px solid #3e2723;
+    height: 70px; 
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.seed-packet:hover {
+    border-color: red;
+}
+
+.seed-packet.selected {
+    box-shadow: 0 0 0 3px red;
+    z-index: 5;
+}
+
+.seed-packet img {
+    height: 85%;
+    width: auto;
+    max-width: 95%;
+}
+
+.packet-cost {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    background: #ffffcc;
+    border: 1px solid #000;
+    font-family: 'DwarvenTodcraft', serif;
+    font-size: 10px; /* Slightly smaller for tighter grid */
+    color: #000;
+    padding: 0 2px;
+    line-height: 1;
+}
+
+.page-footer-left {
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-family: 'DwarvenTodcraft', serif;
+    color: #3e2723;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    color: var(--stat-red);
+}
+
+/* RIGHT PAGE */
+.right-page {
+    width: 42%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 40px;
+}
+
+.portrait-frame {
+    width: 180px;
+    height: 180px;
+    background: #4e342e;
+    border-radius: 15px;
+    padding: 8px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+/* The Green Screen Container */
+.screen-box {
+    width: 100%;
+    height: 100%;
+    background: #81c784;
+    border-radius: 8px;
+    border: 2px solid #2e7d32;
+    position: relative; /* Essential for positioning the GIF */
+    overflow: hidden;
+}
+
+/* The GIF Container - Pinned Top Right */
+.ability-gif-wrapper {
+    position: absolute;
+    top: 5px;    /* 5px from Top */
+    right: 5px;  /* 5px from Right */
+    width: 165px; /* Size of the GIF box */
+    height: 165px;
+    background: rgba(0,0,0,0.1); /* Slight shadow behind GIF */
+    border: 2px solid #fff;
+    border-radius: 4px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    .ability-gif-wrapper img {
+    width: 100%;
+    height: 100%;
+    
+    /* PREVENTS CROPPING */
+    object-fit: contain;  /* Shows the whole plant/projectile without cutting edges */
+    
+    /* KEEPS PIXELS SHARP (CRITICAL FOR PvZ ART) */
+    image-rendering: pixelated; 
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+}
+
+/* The GIF Image Itself */
+.ability-gif-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Utility to hide things */
+.hidden {
+    display: none !important;
+}
+
+/* Hide gif if missing */
+.hidden {
+    display: none !important;
+}
+
+.details-content {
+    width: 100%;
+    color: var(--text-brown);
+    font-family: 'BrianneTod', sans-serif; /* Crazy Dave Style */
+}
+
+#detail-name {
+    text-align: center;
+    font-family: 'DwarvenTodcraft', serif; /* Headers use the wood font */
+    font-size: 2.2rem;
+    margin: 10px 0 15px 0;
+    color: #3e2723;
+    line-height: 1;
+}
+
+.desc-box {
+    font-size: 1.3rem; /* Slightly larger for handwritten font */
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.stats-lines {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.highlight-red {
+    color: var(--stat-red);
+    font-weight: bold;
+}
+
+.flavor-text {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.stats-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-family: 'DwarvenTodcraft', serif; /* Stats look best in the wood font */
+    font-size: 1.4rem;
+}
+
+.stat-val-red {
+    color: var(--stat-red);
+}
+
+.page-footer-right {
+    margin-top: auto;
+    width: 100%;
+    text-align: right;
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PvZ Minus: Auto Battler Wiki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">PvZ Minus <span class="highlight">Auto Battler</span></div>
+            <div class="nav-links">
+                <a href="#history">Origins</a>
+                <a href="#almanac">Almanac</a>
+                <a href="https://discord.gg/gWffwYSP9g" target="_blank" class="discord-btn">Join Tournament</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content fade-in">
+            <h1>The Ultimate Battlefield</h1>
+            <p>Where strategy meets chaos. No hands, just brains.</p>
+            <button onclick="document.getElementById('history').scrollIntoView({behavior: 'smooth'})" class="cta-btn">Discover the Lore</button>
+        </div>
+    </header>
+
+    <section id="history">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>The Origins of Auto Battler</h2>
+                <div class="underline"></div>
+            </div>
+
+            <div class="timeline-block fade-in">
+                <div class="timeline-img creator-profile">
+                    <img src="assets/MC.png" alt="MC-Damai Avatar">
+                    <div class="rank-badge">Pioneer</div>
+                </div>
+                <div class="timeline-text">
+                    <h3>The Architect: MC-大麦 (MC-Damai)</h3>
+                    <span class="date">The "Daily Guessing" Era (Bilibili)</span>
+                    <p>The <strong>Auto Battler</strong> format was invented by the visionary Bilibili creator <strong>MC-大麦</strong>.</p>
+                    <p>He pioneered the concept of <em>"Random Useful Plants VS Random Zombies"</em>-a video series that functioned like a game show where viewers bet on the winner.</p>
+                    <a href="https://space.bilibili.com/3537116975860682" target="_blank" class="ref-link">Visit Bilibili Channel &rarr;</a>
+                </div>
+            </div>
+
+            <div class="timeline-block reverse fade-in">
+                <div class="timeline-text">
+                    <h3>The Engine: PvZ Minus</h3>
+                    <span class="date">The "Minus" Tournament Era</span>
+                    <p>
+                        Inspired by MC-大麦's video series, the <strong>PvZ Minus</strong> team (led by <a href="https://www.youtube.com/@bayantpvz81" target="_blank" class="bayant">Bayant</a>) took the concept a step further. 
+                        They didn't just record battles; they built a dedicated <strong>Engine</strong> for the mode.
+                    </p>
+                    <p>
+                        By codifying the rules - introducing the <span class="highlight">Variable Wave Timer</span>, standardizing the 
+                        <strong>Imitater Zombie</strong>, and using <strong>Poll Bots</strong> for fair drafting - they transformed a fun video format into a 
+                        competitive, calculated tournament where strategy (and RNG) reigns supreme.
+                    </p>
+                </div>
+                <div class="timeline-img">
+                    <img src="assets/minus_tournament_screenshot.jpg" onerror="this.src='https://i.ytimg.com/vi/d8cUw3bomb0/maxresdefault.jpg'" alt="PvZ Minus Tournament">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="almanac">
+        <div class="almanac-container fade-in">
+            
+            <div class="wood-sign">
+                <h2 id="almanac-heading">Suburban Almanac - Plants</h2>
+            </div>
+
+            <div class="book-wrapper">
+                
+                <div class="page left-page">
+                    <div class="tabs-container">
+                        <button class="tab-btn active" onclick="app.setCategory('plants')">Plants</button>
+                        <button class="tab-btn" onclick="app.setCategory('zombies')">Zombies</button>
+                    </div>
+
+                    <div id="grid-container" class="seed-grid">
+                        </div>
+
+                    <div class="page-footer-left">
+                        <button class="nav-btn"> Almanac Index</button>
+                    </div>
+                </div>
+
+                <div class="page right-page">
+                    
+                    <div class="portrait-frame">
+                        <div class="screen-box">
+                            <div class="ability-gif-wrapper">
+                                <img id="detail-gif" src="" alt="Ability GIF">
+                            </div>
+                            
+                            <div id="media-fallback" class="hidden">No Image</div>
+                        </div>
+                    </div>
+
+                    <div class="details-content">
+                        <h2 id="detail-name">Tall-nut</h2>
+                        
+                        <div class="desc-box">
+                            <p id="detail-mechanics">Tall-nuts are heavy-duty wall plants that can't be vaulted over.</p>
+                            
+                            <div class="stats-lines">
+                                <p><strong>Minus Ability:</strong> <span id="detail-minus" class="highlight-red">none</span></p>
+                                <p><strong>Auto Battler:</strong> <span id="detail-auto" class="highlight-red">can't be vaulted or jumped over</span></p>
+                            </div>
+                        </div>
+
+                        <p id="detail-flavor" class="flavor-text">
+                            "People wonder if there's a rivalry between Wall-nut and Tall-nut. Tall-nut laughs a rich, baritone laugh."
+                        </p>
+
+                        <div class="stats-footer">
+                            <span class="stat-group">Cost: <span id="detail-cost" class="stat-val-red">0</span></span>
+                            <span class="stat-group">Recharge: <span id="detail-recharge" class="stat-val-red">NA</span></span>
+                        </div>
+                    </div>
+
+                    <div class="page-footer-right">
+                        <button class="nav-btn">Close X</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="feedback">
+        <div class="feedback-content">
+            <p>"Any feedback regarding the website, please contact the Minus team"</p>
+            <span class="dev-note">- Website made by <a href="https://www.youtube.com/@pqd2004" target="_blank" class="bayant">PQD</a> -</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

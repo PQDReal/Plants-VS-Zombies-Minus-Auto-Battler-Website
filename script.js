@@ -393,7 +393,7 @@ const database = [
         icon: "assets/images/cobcannon.png", abilityGif: "assets/gifs/cobcannon.gif",
         desc: "Cob Cannons must be planted on two side-by-side Kernel-pults. Click to launch deadly cobs.",
         minus: "TBA", auto: "TBA",
-        flavor: "What's the deal with Cob Cannon anyway? He went to Harvard. He practices law in New York.",
+        flavor: "What's the deal with Cob Cannon anyway? He went to Harvard to learn to mass produce nuclear weapons out of CORNSSSSS.",
         cost: 500, recharge: "very slow"
     }
 ];

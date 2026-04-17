@@ -251,7 +251,7 @@ const database = [
         id: "pumpkin", category: "plants", name: "Pumpkin",
         icon: "assets/images/pumpkin.png", abilityGif: "assets/gifs/pumpkin.gif",
         desc: "Pumpkins protect the plant within.",
-        minus: "TBA", auto: "No longer buff plants when gets eaten, instead, it’ll plant another Pumpkin with having half of the previous Pumpkin's total HP.",
+        minus: "TBA", auto: "No longer buff plants when gets eaten, instead, it'll plant another Pumpkin with having half of the previous Pumpkin's total HP.",
         flavor: "Pumpkin hasn't heard from his cousin Renfield lately. Apparently Renfield's a big star...",
         cost: 150, recharge: "slow"
     },
@@ -359,9 +359,10 @@ const database = [
         id: "cattail", category: "plants", name: "Cattail",
         icon: "assets/images/cattail.png", abilityGif: "assets/gifs/cattail.gif",
         desc: "Cattails can be planted on Lily Pads and shoot homing spikes.",
-        minus: "TBA", auto: "Shoots 3 homing spikes at a time when aiming to the zombie that's on the same lane as it.",
+        minus: "Shoots a piercing homing spike that disappear after a few seconds. Increases cost by 100 for each Cattail on the lawn.",
+        auto: "Shoots 3 homing spikes at a time when aiming to the zombie that's on the same lane as it.",
         flavor: "\"Woof!\" says Cattail. \"Woof woof woof! Does this confuse you? Will you expect me to meow?\"",
-        cost: 400, recharge: "very slow"
+        cost: "400+", recharge: "very slow"
     },
     {
         id: "winter_melon", category: "plants", name: "Winter Melon",
@@ -397,7 +398,7 @@ const database = [
     }
 ];
 
-// --- GENERATE 48 FILLER PLANTS (soon no more)---
+// --- GENERATE 45 FILLER PLANTS (soon no more)---
 /*
 for (let i = 0; i < 45; i++) {
     database.push({
@@ -472,8 +473,8 @@ const app = {
         document.getElementById('detail-minus').innerText = unit.minus || "N/A";
         document.getElementById('detail-auto').innerText = unit.auto || "N/A";
         document.getElementById('detail-flavor').innerText = unit.flavor || "";
-        document.getElementById('detail-cost').innerText = unit.cost || "-";
-        document.getElementById('detail-recharge').innerText = unit.recharge || "-";
+        document.getElementById('detail-cost').innerText = unit.cost ?? "-";
+        document.getElementById('detail-recharge').innerText = unit.recharge ?? "-";
 
         // 2. Update GIF Logic
         const gifImg = document.getElementById('detail-gif');

@@ -169,7 +169,7 @@ const database = [
         id: "chilly_pepper", category: "plants", name: "Chilly Pepper",
         icon: "assets/images/chilly.png", abilityGif: "assets/gifs/chilly.gif",
         desc: "Jalapenos destroy an entire lane of zombies.",
-        minus: "TBA", auto: "Move to the right in 1x speed when it haven't seen any zombies, stops moving when reaching to the end of lawn",
+        minus: "TBA", auto: "(created by Marigold) Similar to Minus ability",
         flavor: "\"Nnnggghhh!\" says Jalapeno. He's wound a little tight.",
         cost: 125, recharge: "very slow"
     },
@@ -227,7 +227,7 @@ const database = [
         id: "blover", category: "plants", name: "Blover",
         icon: "assets/images/blover.png", abilityGif: "assets/gifs/blover.gif",
         desc: "Blovers blow away all balloon zombies and fog.",
-        minus: "TBA", auto: "TBA",
+        minus: "TBA", auto: "(created by Marigold) Similar to Minus ability",
         flavor: "When he was five, Blover got a shiny new birthday cake. He blew and blew, but couldn't extinguish the candles. He's been practicing ever since.",
         cost: 75, recharge: "fast"
     },

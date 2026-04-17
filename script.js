@@ -333,7 +333,7 @@ const database = [
     // --- UPGRADE PLANTS (8) ---
     {
         id: "gatling_pea", category: "plants", name: "Gatling Pea",
-        icon: "assets/images/gatlingpea.png", abilityGif: "assets/gifs/gatlingpea.gif",
+        icon: "assets/images/gatlingpea.png", abilityGif: "assets/gifs/bayant.gif",
         desc: "Gatling Peas shoot four peas at a time.",
         minus: "TBA", auto: "Level 1: Shoots 4 peas at a time. Other properties remain the same as the original version.\nLevel 2: Shoots 5 peas at a time, with a 5% chance to shoot a snow pea.\nLevel 3: Shoots 6 peas, plus heals itself by 1 HP each time it attacks.",
         flavor: "Gatling Pea's parents were concerned when he announced his intention to join the military.",
@@ -349,7 +349,7 @@ const database = [
     },
     {
         id: "gloom_shroom", category: "plants", name: "Gloom-shroom",
-        icon: "assets/images/gloomshroom.png", abilityGif: "assets/gifs/gloomshroom.gif",
+        icon: "assets/images/gloomshroom.png", abilityGif: "assets/gifs/gloom.gif",
         desc: "Gloom-shrooms release heavy fumes in an area around themselves.",
         minus: "TBA", auto: "Deals 55 damage to zombies with armors, 20 damage to zombie bodies, and 30 damage to zombies with vehicle. 5 tiles of horizontal attacking range.",
         flavor: "\"I've always been a gloomy guy,\" says Gloom-shroom. \"But that's okay, it's just who I am.\"",

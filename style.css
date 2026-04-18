@@ -79,7 +79,6 @@ nav {
 }
 
 .logo {
-    /* The Main Logo Style */
     font-family: 'HouseofTerror', cursive;
     font-size: 2.2rem;
     color: #fff;
@@ -102,21 +101,48 @@ nav {
     border-bottom-color: var(--accent);
 }
 
-.nav-links a {
-    font-family: 'DwarvenTodcraft', serif; /* UI Buttons style */
-    font-size: 1.1rem;
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    letter-spacing: 0.5px;
+/* Update nav-links to use Flexbox for vertical alignment */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Creates even spacing between all items */
 }
 
-.discord-btn {
-    background: #5865F2;
-    padding: 8px 16px;
-    border-radius: 4px;
-    color: white;
-    text-decoration: none;
+/* Base text link styling */
+.nav-links a { 
+    font-family: 'DwarvenTodcraft', serif; 
+    font-size: 1.1rem; 
+    color: white; 
+    text-decoration: none; 
+    letter-spacing: 0.5px; 
+}
+
+/* NEW: Download MINUS Button (Green) */
+.download-btn { 
+    background: var(--accent); 
+    padding: 8px 16px; 
+    border-radius: 4px; 
+    box-shadow: 0 4px 0 #2e7d32; /* Adds 3D depth */
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.download-btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* UPDATED: Discord Button (Purple) */
+.discord-btn { 
+    background: #5865F2; 
+    padding: 8px 16px; 
+    border-radius: 4px; 
+    box-shadow: 0 4px 0 #404eed; /* Adds 3D depth */
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.discord-btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
 }
 
 /* --- HERO SECTION --- */
